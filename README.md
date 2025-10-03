@@ -1,6 +1,6 @@
 #  Azure AI Foundry
 
-Um projeto que busca colocar em prática o que foi aprendido sobre Azure AI Foundry. Inicialmente foi feito a implementação do modelo escolhido, que foi o GPT 4o Mini. 
+Um projeto que busca colocar em prática o que foi aprendido sobre Azure AI Foundry. Primeiramente foi feito a implementação do modelo escolhido, que foi o GPT 4o Mini. 
 
 ### Playground de chat:
 ![Gráfico de vendas](inputs/screenshots/playground-chat.png)
@@ -16,22 +16,32 @@ Um projeto que busca colocar em prática o que foi aprendido sobre Azure AI Foun
 
 #  Azure OpenAI Chatbot
 
-Para futuros projetos decidir expandir esse projeto, e implantar esse modelo em um chatbot interativo em Python que utiliza Azure AI Foundry.
+Para futuros projetos, decidi expandir esse projeto, e implantar esse modelo em um chatbot web moderno e interativo integrado com Azure OpenAI, oferecendo conversas com IA e suporte para consulta de documentos PDF através do Azure AI Search.
 
 ## ✨ Funcionalidades
 
-- 💬 **Conversa contínua** com memória de contexto
-- 🎛️ **Comandos interativos** para controlar o bot
-- 💾 **Histórico persistente** durante a sessão
-- 📄 **Salvamento de conversas** em JSON
-- 🔐 **Autenticação flexível** (API Key ou Azure AD)
+* 💬 Chat em tempo real com GPT-4o-mini
+* 📚 Integração com documentos PDF via Azure AI Search
+* 🎛️ Configurações personalizáveis (temperatura, max tokens)
+* 💾 Gerenciamento de sessões com histórico persistente
+* 🎨 Interface moderna e responsiva
+* ⌨️ Atalhos de teclado para produtividade
+* 📊 Comandos especiais (/help, /stats, /clear)
+* 🔒 Autenticação segura com Azure
+* 🌐 API REST documentada
+
+## 📋 Pré-requisitos
+
+* Python 3.8 ou superior
+* Conta Azure com Azure OpenAI habilitado
+* Azure AI Search (opcional, para usar documentos PDF)
 
 ## 🚀 Instalação
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/Roger-dev-eng/dio-ChatBox.git
-cd dio-ChatBox
+git clone https://github.com/Roger-dev-eng/dio-ChatBot.git
+cd dio-ChatBot
 ```
 
 ### 2. Instale as dependências
@@ -66,31 +76,62 @@ Execute o chatbot:
 ```bash
 python chatbot.py
 ```
+Acesse em seu navegador: http://127.0.0.1:5000
+
+## 📁 Estrutura do Projeto
+azure-openai-chatbot/<br />
+│<br />
+├── 📄 app.py -->                 Servidor Flask (API + Web)<br />
+├── 📄 chatbot_core.py-->         Lógica principal do chatbot<br />
+├── 📄 requirements.txt -->       Dependências Python<br />
+├── 📄 .env.example        -->   Template de configuração<br />
+├── 📄 .gitignore       -->      Arquivos ignorados pelo Git<br />
+├── 📄 README.md         -->     Documentação<br />
+├── 📄 LICENSE         -->       Licença MIT<br />
+│<br />
+├── 📂 templates/        -->     Templates HTML<br />
+│   └── chat.html         -->   Interface do chat<br />
+│<br />
+└── 📂 static/              -->  Arquivos estáticos<br />
+    ├── css/<br />
+    │   └── style.css     -->   Estilos<br />
+    └── js/<br />
+    │  └── chat.js       -->   JavaScript frontend
+
+# 🔧 Configuração Detalhada
+### Obtendo Credenciais Azure OpenAI
+
+1. Acesse o Portal do Azure
+2. Navegue até seu recurso Azure OpenAI
+3. Em "Keys and Endpoint", copie:
+
+    *   Endpoint URL
+    * API Key (KEY 1 ou KEY 2)
+
+
+4. Em "Model deployments", veja o nome do deployment (ex: gpt-4o-mini)
+
+###  Configurando Azure AI Search (Opcional)
+#### Para habilitar chat com documentos PDF:
+
+1. Acesse Azure AI Foundry
+2. Vá para Chat > Add your data
+3. Faça upload dos seus PDFs
+4. Configure ou crie um Azure AI Search
+5. Copie as credenciais (Endpoint, Key, Index Name)
+6. Adicione ao arquivo .env
 
 ### Comandos disponíveis:
-- `sair` - Encerra o chatbot
-- `limpar` - Limpa o histórico da conversa
-- `historico` - Mostra conversas anteriores
-- `salvar` - Salva conversa em arquivo JSON
-- `ajuda` - Lista todos os comandos
+Digite no chat:
+
+- /help - Mostra todos os comandos disponíveis
+- /stats - Exibe estatísticas da sessão atual
+- /clear - Limpa o histórico do chat
+- /new - Inicia uma nova sessão
 
 ## 📋 Exemplo de Uso
+![Gráfico de vendas](inputs/screenshots/exemplo.png)
 
-```
-🤖 Chatbot Azure OpenAI inicializado!
-💡 Digite 'sair' para encerrar, 'limpar' para limpar histórico
-
-👤 Você: Olá! Como você funciona?
-🤖 Bot: Olá! Sou um assistente de IA baseado no Azure OpenAI...
-
-👤 Você: salvar
-💾 Conversa salva em: conversa_20241225_143022.json
-```
-
-## 🛠️ Requisitos
-
-- Python 3.8+
-- Conta Azure com Azure OpenAI habilitado
 
 ## 📦 Dependências
 
@@ -98,6 +139,8 @@ python chatbot.py
 openai>=1.12.0
 azure-identity>=1.15.0
 python-dotenv>=1.0.0
+Flask>=2.3.0
+flask-cors>=4.0.0
 ```
 
 # 🎓 Conclusão: 
@@ -117,14 +160,6 @@ Este projeto usa o modelo GPT-4o-mini, que é econômico:
 - **Entrada:** ~$0.15 por 1M tokens
 - **Saída:** ~$0.60 per 1M tokens
 - **Uso típico:** R$ 5-20/mês para uso pessoal
-
-## 🤝 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
 
 ## 📄 Licença
 
