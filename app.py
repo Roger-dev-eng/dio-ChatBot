@@ -2,6 +2,9 @@
 Servidor Flask para interface web do chatbot
 Gerencia rotas HTTP e integração com o módulo chatbot_core
 """
+# Permite inicializar a API sem passar pelo terminal
+import webbrowser
+from threading import Timer
 
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
@@ -19,6 +22,10 @@ CORS(app, origins=["*"])  # Em produção, especificar domínios específicos
 
 # Variável global para o chatbot
 chatbot = None
+
+# Função para abrir o navegador
+def open_browser():
+    webbrowser.open_new("http://127.0.0.1:5000")
 
 # ============================================================================
 # INICIALIZAÇÃO
@@ -282,6 +289,10 @@ if __name__ == '__main__':
         print(f"📱 Interface: http://{host}:{port}")
         print(f"🔌 API: http://{host}:{port}/api/")
         print("=" * 60)
+        
+        # Se o navegador ainda não estiver aberto, irá iniciar ele depois de 1 segundo
+        if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+            Timer(1, open_browser).start()
         
         app.run(
             host=host,

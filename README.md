@@ -28,15 +28,14 @@ Para futuros projetos, decidi expandir esse projeto, e implantar esse modelo em 
 * ⌨️ Atalhos de teclado para produtividade
 * 📊 Comandos especiais (/help, /stats, /clear)
 * 🔒 Autenticação segura com Azure
-* 🌐 API REST documentada
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 * Python 3.8 ou superior
 * Conta Azure com Azure OpenAI habilitado
 * Azure AI Search (opcional, para usar documentos PDF)
 
-## 🚀 Instalação
+##  Instalação
 
 ### 1. Clone o repositório
 ```bash
@@ -72,15 +71,13 @@ AZURE_OPENAI_KEY=sua_chave_aqui
 
 ## 🎮 Uso
 
-Execute o chatbot:
-```bash
-python chatbot.py
+Após clonar o repositório, clique duas vezes no arquivo 'start_chatbot.bat', e programa abrirá o navegador.
 ```
-Acesse em seu navegador: http://127.0.0.1:5000
 
 ## 📁 Estrutura do Projeto
 azure-openai-chatbot/<br />
-│<br />
+|<br />
+├── 📄 start_chatbot.bat --> Inicializa o programa <br />
 ├── 📄 app.py -->                 Servidor Flask (API + Web)<br />
 ├── 📄 chatbot_core.py-->         Lógica principal do chatbot<br />
 ├── 📄 requirements.txt -->       Dependências Python<br />
