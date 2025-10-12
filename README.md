@@ -18,16 +18,16 @@ Um projeto que busca colocar em prática o que foi aprendido sobre Azure AI Foun
 
 Para futuros projetos, decidi expandir esse projeto, e implantar esse modelo em um chatbot web moderno e interativo integrado com Azure OpenAI, oferecendo conversas com IA e suporte para consulta de documentos PDF através do Azure AI Search.
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
-* 💬 Chat em tempo real com GPT-4o-mini
-* 📚 Integração com documentos PDF via Azure AI Search
-* 🎛️ Configurações personalizáveis (temperatura, max tokens)
-* 💾 Gerenciamento de sessões com histórico persistente
-* 🎨 Interface moderna e responsiva
-* ⌨️ Atalhos de teclado para produtividade
-* 📊 Comandos especiais (/help, /stats, /clear)
-* 🔒 Autenticação segura com Azure
+*  Chat em tempo real com GPT-4o-mini
+*  Integração com documentos PDF via Azure AI Search
+*  Configurações personalizáveis (temperatura, max tokens)
+*  Gerenciamento de sessões com histórico persistente
+*  Interface moderna e responsiva
+*  Atalhos de teclado para produtividade
+*  Comandos especiais (/help, /stats, /clear)
+*  Autenticação segura com Azure
 
 ##  Pré-requisitos
 
@@ -58,7 +58,7 @@ ENDPOINT_URL=https://seu-recurso.cognitiveservices.azure.com/
 DEPLOYMENT_NAME=gpt-4o-mini
 AZURE_OPENAI_KEY=sua_chave_aqui
 
-## 🔧 Configuração
+##  Configuração
 
 ### Obter credenciais Azure OpenAI:
 
@@ -69,12 +69,12 @@ AZURE_OPENAI_KEY=sua_chave_aqui
    - **API Key**
 4. Em **"Model deployments"**, veja o nome do deployment
 
-## 🎮 Uso
+##  Uso
 
 Após clonar o repositório, clique duas vezes no arquivo 'start_chatbot.bat', e programa abrirá o navegador.
 ```
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 azure-openai-chatbot/<br />
 |<br />
 ├── 📄 start_chatbot.bat --> Inicializa o programa <br />
@@ -95,7 +95,7 @@ azure-openai-chatbot/<br />
     └── js/<br />
     │  └── chat.js       -->   JavaScript frontend
 
-# 🔧 Configuração Detalhada
+#  Configuração Detalhada
 ### Obtendo Credenciais Azure OpenAI
 
 1. Acesse o Portal do Azure
@@ -126,11 +126,11 @@ Digite no chat:
 - /clear - Limpa o histórico do chat
 - /new - Inicia uma nova sessão
 
-## 📋 Exemplo de Uso
+##  Exemplo de Uso
 ![Gráfico de vendas](inputs/screenshots/exemplo.png)
 
 
-## 📦 Dependências
+##  Dependências
 
 ```
 openai>=1.12.0
@@ -140,25 +140,25 @@ Flask>=2.3.0
 flask-cors>=4.0.0
 ```
 
-# 🎓 Conclusão: 
+#  Conclusão: 
 Esta jornada demonstrou como transformar um código básico em uma aplicação completa e profissional.
 O processo ensinou muito além da programação: compreendemos o ecossistema Azure, desde conceitos de tokens e custos até implementação de RAG com Azure AI Search.
 Essa base sólida abre caminho para projetos mais ambiciosos com IA, sempre mantendo foco em qualidade, segurança e experiência do usuário.
 
-## 🔒 Segurança
+##  Segurança
 
-- ⚠️ **Nunca commite** o arquivo `.env` 
-- 🔑 **Mantenha suas chaves privadas**
-- 🛡️ **Use .gitignore** para proteger credenciais
+-  **Nunca commite** o arquivo `.env` 
+-  **Mantenha suas chaves privadas**
+-  **Use .gitignore** para proteger credenciais
 
-## 💰 Custos
+##  Custos
 
 Este projeto usa o modelo GPT-4o-mini, que é econômico:
 - **Entrada:** ~$0.15 por 1M tokens
 - **Saída:** ~$0.60 per 1M tokens
 - **Uso típico:** R$ 5-20/mês para uso pessoal
 
-## 📄 Licença
+##  Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
