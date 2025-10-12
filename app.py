@@ -1,7 +1,3 @@
-"""
-Servidor Flask para interface web do chatbot
-Gerencia rotas HTTP e integração com o módulo chatbot_core
-"""
 # Permite inicializar a API sem passar pelo terminal
 import webbrowser
 from threading import Timer
@@ -27,19 +23,15 @@ chatbot = None
 def open_browser():
     webbrowser.open_new("http://127.0.0.1:5000")
 
-# ============================================================================
-# INICIALIZAÇÃO
-# ============================================================================
-
 def init_app():
     """Inicializa o chatbot quando a aplicação inicia"""
     global chatbot
     try:
         chatbot = initialize_chatbot()
-        print("✅ Flask + Chatbot inicializados com sucesso!")
+        print(" Flask + Chatbot inicializados com sucesso!")
         return True
     except Exception as e:
-        print(f"❌ Erro ao inicializar chatbot no Flask: {str(e)}")
+        print(f" Erro ao inicializar chatbot no Flask: {str(e)}")
         return False
 
 # Inicializar na primeira requisição
@@ -49,18 +41,12 @@ def before_first_request():
     if chatbot is None:
         init_app()
 
-# ============================================================================
-# ROTAS WEB (Interface HTML)
-# ============================================================================
 
 @app.route('/')
 def index():
     """Página principal - Interface do chat"""
     return render_template('chat.html')
 
-# ============================================================================
-# API ENDPOINTS (JSON)
-# ============================================================================
 
 @app.route('/api/chat', methods=['POST'])
 def api_chat():
@@ -238,9 +224,6 @@ def api_stats():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================================
-# TRATAMENTO DE ERROS
-# ============================================================================
 
 @app.errorhandler(404)
 def not_found(error):
@@ -268,9 +251,6 @@ def internal_error(error):
         "status_code": 500
     }), 500
 
-# ============================================================================
-# CONFIGURAÇÕES E EXECUÇÃO
-# ============================================================================
 
 if __name__ == '__main__':
     # Configurações de desenvolvimento
@@ -279,15 +259,15 @@ if __name__ == '__main__':
     port = int(os.getenv('FLASK_PORT', '5000'))
     
     print("=" * 60)
-    print("🚀 Iniciando Azure OpenAI Chatbot...")
+    print(" Iniciando Azure OpenAI Chatbot...")
     print("=" * 60)
     
     # Inicializar chatbot antes de rodar servidor
     if init_app():
-        print(f"🌐 URL: http://{host}:{port}")
-        print(f"🔧 Debug: {debug_mode}")
-        print(f"📱 Interface: http://{host}:{port}")
-        print(f"🔌 API: http://{host}:{port}/api/")
+        print(f" URL: http://{host}:{port}")
+        print(f" Debug: {debug_mode}")
+        print(f" Interface: http://{host}:{port}")
+        print(f" API: http://{host}:{port}/api/")
         print("=" * 60)
         
         # Se o navegador ainda não estiver aberto, irá iniciar ele depois de 1 segundo

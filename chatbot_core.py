@@ -82,9 +82,9 @@ class AzureChatBot:
         self._initialize_client()
         self._initialize_sessions()
         
-        print(f"🤖 Azure OpenAI Chatbot inicializado!")
-        print(f"📊 Modelo: {self.deployment}")
-        print(f"📚 Azure AI Search: {'Ativo' if self.has_search else 'Inativo'}")
+        print(f" Azure OpenAI Chatbot inicializado!")
+        print(f" Modelo: {self.deployment}")
+        print(f" Azure AI Search: {'Ativo' if self.has_search else 'Inativo'}")
     
     def _load_config(self):
         """Carrega configurações das variáveis de ambiente"""
@@ -287,5 +287,5 @@ def initialize_chatbot() -> AzureChatBot:
     try:
         return get_chatbot()
     except Exception as e:
-        print(f"❌ Erro ao inicializar chatbot: {str(e)}")
+        print(f" Erro ao inicializar chatbot: {str(e)}")
         raise

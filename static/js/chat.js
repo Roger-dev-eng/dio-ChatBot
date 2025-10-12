@@ -1,12 +1,3 @@
-/**
- * ChatBot Frontend JavaScript
- * Gerencia a interface web do chatbot Azure OpenAI
- */
-
-// ============================================================================
-// CONFIGURAÇÕES E VARIÁVEIS GLOBAIS
-// ============================================================================
-
 const API_BASE_URL = '/api';
 let currentSessionId = null;
 let isLoading = false;
