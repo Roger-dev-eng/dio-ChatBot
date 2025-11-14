@@ -75,26 +75,27 @@ Após clonar o repositório, clique duas vezes no arquivo 'start_chatbot.bat', e
 ```
 
 ##  Estrutura do Projeto
-azure-openai-chatbot/<br />
-|<br />
-├── 📄 start_chatbot.bat --> Inicializa o programa <br />
-├── 📄 app.py -->                 Servidor Flask (API + Web)<br />
-├── 📄 chatbot_core.py-->         Lógica principal do chatbot<br />
-├── 📄 requirements.txt -->       Dependências Python<br />
-├── 📄 .env.example        -->   Template de configuração<br />
-├── 📄 .gitignore       -->      Arquivos ignorados pelo Git<br />
-├── 📄 README.md         -->     Documentação<br />
-├── 📄 LICENSE         -->       Licença MIT<br />
-│<br />
-├── 📂 templates/        -->     Templates HTML<br />
-│   └── chat.html         -->   Interface do chat<br />
-│<br />
-└── 📂 static/              -->  Arquivos estáticos<br />
-    ├── css/<br />
-    │   └── style.css     -->   Estilos<br />
-    └── js/<br />
+```
+azure-openai-chatbot/
+|
+├── start_chatbot.bat --> Inicializa o programa 
+├── app.py -->                 Servidor Flask (API + Web)
+├── chatbot_core.py-->         Lógica principal do chatbot
+├── requirements.txt -->       Dependências Python
+├── .env.example        -->   Template de configuração
+├── .gitignore       -->      Arquivos ignorados pelo Git
+├── README.md         -->     Documentação
+├── LICENSE         -->       Licença MIT
+│
+├── templates/        -->     Templates HTML
+│   └── chat.html         -->   Interface do chat
+│
+└── static/              -->  Arquivos estáticos
+    ├── css/
+    │   └── style.css     -->   Estilos
+    └── js/
     │  └── chat.js       -->   JavaScript frontend
-
+```
 #  Configuração Detalhada
 ### Obtendo Credenciais Azure OpenAI
 
